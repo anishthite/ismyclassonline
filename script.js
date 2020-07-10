@@ -2,23 +2,52 @@
 const table = document.querySelector("tbody");
 const courses = Object.keys(data.courses);
 
+//const statusMap = {
+//    0: "Partially at Distance",
+//    1: "Fully at Disance",
+//    2: "Technology Enhanced",
+//    3: "Directed Study",
+//    4: "Lecture",
+//    5: "Thesis Based",
+//    6: "Studio",
+//    7: "Lecture",
+//    8: "Unknown",
+//    9: "Directed Study",
+//    10: "Directed Study",
+//    11: "Internship/Practicum",
+//    12: "Unknown",
+//    13: "Unknown",
+//    14: ""
+//}
 const statusMap = {
-    0: "Partially at Distance",
-    1: "Fully at Disance",
-    2: "Technology Enhanced",
-    3: "Directed Study",
-    4: "Lecture",
-    5: "Thesis Based",
-    6: "Studio",
-    7: "Lecture",
-    8: "Unknown",
-    9: "Directed Study",
-    10: "Directed Study",
-    11: "Internship/Practicum",
-    12: "Unknown",
-    13: "Unknown",
-    14: ""
+    0:"Partially at a Distance",
+    1:"UNKNOWN",
+    2:"UNKNOWN",
+    3:"Research/Thesis/Directed Learning (not specified if online)",
+    4:"Fully at a Distance",
+    5:"Research/Thesis/Directed Learning (not specified if online)",
+    6:"UNKNOWN",
+    7:"UNKNOWN",
+    8:"UNKNOWN",
+    9:"Research/Thesis/Directed Learning (not specified if online)",
+    10:"Research/Thesis/Directed Learning (not specified if online)",
+    11:"UNKNOWN",
+    12:"UNKNOWN",
+    13:"Technology Enhanced",
+    14:"UNKNOWN",
+    15:"UNKNOWN",
+    16:"UNKNOWN",
+    17:"UNKNOWN",
+    18:"10 Instructional Method",
+    19:"91 Instructional Method",
+    20:"Research/Thesis/Directed Learning(not specified if online)",
+    21:"55 Instructional Method",
+    22:"UNKNOWN",
+    23:"Research/Thesis/Directed Learning(not specified if online)",
+    24:"81 Instructional Method",
+    25:"Research/Thesis/Directed Learning(not specified if online)"
 }
+
 
 // console.log(data); 
 
