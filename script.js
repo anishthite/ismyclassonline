@@ -48,9 +48,34 @@ const statusMap = {
     25:"Research/Thesis/Directed Learning(not specified if online)"
 }
 
+// List of unique textual statuses
+const uniqStatus = Object.values(statusMap).filter((v,i,s) => s.indexOf(v) === i).sort()
 
-// console.log(data); 
-
+window.onload = () => {
+  const sel = document.getElementById("selectStatus")
+  uniqStatus.forEach(stat => {
+    var opt = document.createElement("option")
+    opt.text = stat
+    opt.selected = true
+    sel.options.add(opt,1)
+  })
+  const courseFilter = document.getElementById("courseFilter")
+  const updateFilters = () => {
+    setTimeout(() => {
+      const shownStatuses = [].slice.call(sel.selectedOptions).map(o => o.text)
+      const filterText = courseFilter.value.toLowerCase()
+      table.childNodes.forEach(row => {
+        const courseIdMatches = row.childNodes[0].innerHTML.toLowerCase().includes(filterText)
+        const courseNameMatches = row.childNodes[1].innerHTML.toLowerCase().includes(filterText)
+        const statusMatches = shownStatuses.includes(row.childNodes[3].innerHTML)
+        row.hidden = !((courseIdMatches || courseNameMatches) && statusMatches)
+      })
+    },10)
+  }
+  sel.addEventListener("input",updateFilters)
+  courseFilter.addEventListener("input",updateFilters)
+  updateFilters()
+}
 
 for(let i = 0; i < courses.length; i++) {
     const sections = data.courses[courses[i]][1];
