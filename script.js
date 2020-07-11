@@ -2,23 +2,6 @@
 const table = document.querySelector("tbody");
 const courses = Object.keys(data.courses);
 
-//const statusMap = {
-//    0: "Partially at Distance",
-//    1: "Fully at Disance",
-//    2: "Technology Enhanced",
-//    3: "Directed Study",
-//    4: "Lecture",
-//    5: "Thesis Based",
-//    6: "Studio",
-//    7: "Lecture",
-//    8: "Unknown",
-//    9: "Directed Study",
-//    10: "Directed Study",
-//    11: "Internship/Practicum",
-//    12: "Unknown",
-//    13: "Unknown",
-//    14: ""
-//}
 const statusMap = {
     0:"Partially at a Distance",
     1:"UNKNOWN",
@@ -49,7 +32,7 @@ const statusMap = {
 }
 
 // List of unique textual statuses
-const uniqStatus = Object.values(statusMap).filter((v,i,s) => s.indexOf(v) === i).sort()
+const uniqStatus = Object.values(data.scheduleTypes).filter((v,i,s) => s.indexOf(v) === i).sort()
 
 window.onload = () => {
   const sel = document.getElementById("selectStatus")
@@ -89,7 +72,7 @@ for(let i = 0; i < courses.length; i++) {
         id.innerText = courses[i];
         name.innerText = data.courses[courses[i]][0];
         section.innerText = sectionKeys[j];
-        status.innerText = statusMap[sections[sectionKeys[j]][3]];
+        status.innerText = data.scheduleTypes[sections[sectionKeys[j]][3]];
 
         if(status.innerText == "undefined") {
             console.log(`${id.innerText}: ${name.innerText}: ${sections[sectionKeys[j]][3]}`)

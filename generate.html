@@ -24,9 +24,29 @@
           <h2 class="subtitle">
             Spoiler: probably partially online
           </h2>
+          <h3>Last updated: 6:00pm EST 07/09/2020. Warning: Might be inaccurate, double check on Buzzport before making any life-changing decisions. </h3>
         </div>
       </div>
     </section>
+        <section id="filters">
+        <div class="container">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="Filter Classes" id="courseFilter">
+              </div>
+            </div>
+          <div class="field">
+            <label class="label">Filter Statuses. (Control or shift to multiple select)</label>
+            <div class="control">
+               <div class="select is-multiple">
+                <select multiple size="4" id="selectStatus">
+                </select>
+              </div> 
+            </div>
+          </div>
+        </div>
+    </section>
+
     <section id="table">
       <div class="table-container">
     <table class="table is-hoverable">
@@ -43,5 +63,5 @@
   </body>
   <script src="data.js"></script>
   <script src="script.js"></script>
-  <p>Made by Vineeth Voruganti and Anish Thite</p>
+  <p>Made by Vineeth Voruganti and Anish Thite. Data Crawler borrowed from <a href="https://github.com/64json/gt-schedule-crawler">https://github.com/64json/gt-schedule-crawler</a></p>
 </html>
