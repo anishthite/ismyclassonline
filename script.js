@@ -32,7 +32,7 @@ const statusMap = {
 }
 
 // List of unique textual statuses
-const uniqStatus = Object.values(data.scheduleTypes).filter((v,i,s) => s.indexOf(v) === i).sort()
+const uniqStatus = data.scheduleTypes.filter((v,i,s) => s.indexOf(v) === i).sort()
 
 window.onload = () => {
   const sel = document.getElementById("selectStatus")
