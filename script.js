@@ -32,7 +32,7 @@ const statusMap = {
 }
 
 // List of unique textual statuses
-const uniqStatus = Object.values(data.scheduleTypes).filter((v,i,s) => s.indexOf(v) === i).sort()
+const uniqStatus = data.scheduleTypes.filter((v,i,s) => s.indexOf(v) === i).sort()
 
 window.onload = () => {
   const sel = document.getElementById("selectStatus")
@@ -48,6 +48,7 @@ window.onload = () => {
       const shownStatuses = [].slice.call(sel.selectedOptions).map(o => o.text)
       const filterText = courseFilter.value.toLowerCase()
       table.childNodes.forEach(row => {
+        if(row.nodeName != "TR"){ return }
         const courseIdMatches = row.childNodes[0].innerHTML.toLowerCase().includes(filterText)
         const courseNameMatches = row.childNodes[1].innerHTML.toLowerCase().includes(filterText)
         const statusMatches = shownStatuses.includes(row.childNodes[3].innerHTML)
